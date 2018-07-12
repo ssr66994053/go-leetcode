@@ -1,12 +1,8 @@
-package problem100
+package P100
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import "github.com/ssr66994053/go-leetcode/model"
 
-func isSameTree(p *TreeNode, q *TreeNode) bool {
+func isSameTree(p *model.TreeNode, q *model.TreeNode) bool {
 	if p == nil && q != nil {
 		return false
 	}

@@ -1,12 +1,8 @@
-package problem104
+package P104
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import "github.com/ssr66994053/go-leetcode/model"
 
-func maxDepth(root *TreeNode) int {
+func maxDepth(root *model.TreeNode) int {
 	if root == nil {
 		return 0
 	}

@@ -1,13 +1,16 @@
-package problem100
+package P100
 
-import "testing"
+import (
+	"github.com/ssr66994053/go-leetcode/model"
+	"testing"
+)
 
-func buildTree(vals []int) *TreeNode {
+func buildTree(vals []int) *model.TreeNode {
 	if vals == nil || len(vals) == 0 {
 		return nil
 	}
 	//这里只是1层树
-	root := &TreeNode{}
+	root := &model.TreeNode{}
 	for i, v := range vals {
 		if v == 0 {
 			continue
@@ -18,10 +21,10 @@ func buildTree(vals []int) *TreeNode {
 			root.Val = v
 			break
 		case 1:
-			root.Left = &TreeNode{Val: v}
+			root.Left = &model.TreeNode{Val: v}
 			break
 		case 2:
-			root.Right = &TreeNode{Val: v}
+			root.Right = &model.TreeNode{Val: v}
 		}
 	}
 

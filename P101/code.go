@@ -1,12 +1,8 @@
-package problem101
+package P101
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import "github.com/ssr66994053/go-leetcode/model"
 
-func isSymmetric(root *TreeNode) bool {
+func isSymmetric(root *model.TreeNode) bool {
 	if root == nil {
 		return true
 	}
@@ -28,7 +24,7 @@ func isSymmetric(root *TreeNode) bool {
 	return left.Val == right.Val && isSymmetricChildren(left, right)
 }
 
-func isSymmetricChildren(left *TreeNode, right *TreeNode) bool {
+func isSymmetricChildren(left *model.TreeNode, right *model.TreeNode) bool {
 	if left == nil && right == nil {
 		return true
 	}

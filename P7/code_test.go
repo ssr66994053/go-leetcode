@@ -1,4 +1,4 @@
-package problem7
+package P7
 
 import "testing"
 

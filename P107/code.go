@@ -1,20 +1,16 @@
-package problem107
+package P107
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import "github.com/ssr66994053/go-leetcode/model"
 
-func levelOrderBottom(root *TreeNode) [][]int {
+func levelOrderBottom(root *model.TreeNode) [][]int {
 	arr := make([][]int, 0)
 
-	return levelOrderBottomChildren(arr, 0, []*TreeNode{root})
+	return levelOrderBottomChildren(arr, 0, []*model.TreeNode{root})
 }
 
-func levelOrderBottomChildren(arr [][]int, level int, children []*TreeNode) [][]int {
+func levelOrderBottomChildren(arr [][]int, level int, children []*model.TreeNode) [][]int {
 	present := make([]int, 0)
-	next := make([]*TreeNode, 0)
+	next := make([]*model.TreeNode, 0)
 	for _, c := range children {
 		if c != nil {
 			present = append(present, c.Val)

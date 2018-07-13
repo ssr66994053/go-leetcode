@@ -11,8 +11,8 @@ func minDepth(root *model.TreeNode) int {
 		return 1
 	}
 
-	left := minDepthChild(root.Left, 1)
-	right := minDepthChild(root.Right, 1)
+	left := minDepth(root.Left)
+	right := minDepth(root.Right)
 	if left == 0 && right != 0 {
 		return right + 1
 	}
@@ -23,27 +23,4 @@ func minDepth(root *model.TreeNode) int {
 		return left + 1
 	}
 	return right + 1
-}
-
-func minDepthChild(node *model.TreeNode, depth int) int {
-	if node == nil {
-		return 0
-	}
-
-	if node.Left == nil && node.Right == nil {
-		return depth
-	}
-
-	left := minDepthChild(node.Left, depth+1)
-	right := minDepthChild(node.Right, depth+1)
-	if left == 0 && right != 0 {
-		return right
-	}
-	if left != 0 && right == 0 {
-		return left
-	}
-	if left < right {
-		return left
-	}
-	return right
 }
